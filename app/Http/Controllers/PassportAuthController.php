@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Passport\Token;
 
 class PassportAuthController extends Controller
 {
@@ -44,5 +47,21 @@ class PassportAuthController extends Controller
         } else {
             return response()->json(['error' => 'Unauthorised'], 401);
         }
+    }
+
+    public function logout () {
+        // getting logged out from requested device
+        $user = Auth::user()->token();
+        $user->revoke();
+        return response([
+            'message' => 'You have been successfully logged out!'
+        ], 200);
+
+        // getting logged out from all devices
+        // Token::where('user_id', auth()->user()->id)
+        // ->update(['revoked' => true]);
+        // return response([
+        //     'message' => 'You have been successfully logged out!'
+        // ], 200);
     }
 }

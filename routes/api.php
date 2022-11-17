@@ -30,9 +30,11 @@ Route::get('/get-single-post', [PostController::class, 'show']);
 
 Route::middleware('auth:api')->group(function () {
 
+    Route::get('/logout', [PassportAuthController::class, 'logout']);
+
     Route::get('/get-my-posts', [PostController::class, 'getMyPosts']);
     Route::post('/create-post', [PostController::class, 'store']);
     Route::post('/update-post', [PostController::class, 'update']);
-    Route::get('/delete-post', [PostController::class, 'delete']);
+    Route::get('/delete-post/{id}', [PostController::class, 'destroy']);
 
 });

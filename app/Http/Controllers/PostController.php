@@ -21,7 +21,8 @@ class PostController extends Controller
     {
         $posts = Post::where([
             ['user_id', auth()->user()->id]
-        ]);
+        ])
+        ->get();
 
         return response()->json([
             'success' => true,
@@ -60,21 +61,24 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->description = $request->description;
 
-        if (auth()->user()->posts()->save($post))
+        if (auth()->user()->posts()->save($post)) {
             return response()->json([
                 'success' => true,
                 'data' => $post->toArray()
             ]);
-        else
+        }
+        else {
             return response()->json([
                 'success' => false,
                 'message' => 'Post not added'
             ], 500);
+        }
     }
 
     public function update(Request $request)
     {
         $post = Post::where([
+            ['id', $request->id],
             ['user_id', auth()->user()->id]
         ])
         ->first();
@@ -87,10 +91,10 @@ class PostController extends Controller
         }
 
         $updated = Post::where([
-            'id', $request->id
+            ['id', $request->id]
         ])
         ->update([
-            'title' => $request->id,
+            'title' => $request->title,
             'description' => $request->description
         ]);
 
