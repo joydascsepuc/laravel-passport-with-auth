@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "e9e502e2-53eb-4cc4-b4be-5776e8b6d647",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15085940"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Joy Das",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "jonayer@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "joydascsepuc@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjA2NjA1ZWE2OTQ1ZDIyM2FkZDJmNjRmMmMyNmJhNzQwNjU1MDE1MzZhYjZkMGExYzU2YjFjNDdjY2RlM2MxNGQ0NGE5MmI0ZTY1NTMzYTQiLCJpYXQiOjE2Njg3MDk1MDkuMjg1NTIxLCJuYmYiOjE2Njg3MDk1MDkuMjg1NTM1LCJleHAiOjE3MDAyNDU1MDkuMjc2MDkyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jF6IgDBJ4tjARkKQtQ02hWpgKKpHcIi24C2ZMi0hOT3Fd6Q_zg0julxWvI_Zt64wFMpF_kbbn70jfsRX9S_W6B9ie2mUrOGQ0VzIHVz_ouxwAXI6nY-8h0VEl0kP63Jg8Z6FtjVi320BA2iZl467CTnbJoOoj-lnBgjBJip6_TsWMTaIGUm-QzYQQ4a_BSc52flfOltWq3aX9nmTKp-eW1VPJCZdBhxEbXTUADUzJVu2Dqx_o1X-5Yta--11GcZYSZRZCqpvn1Qg5_cjpfFbh0ztThwito3LegLbmYwzXcBtINNjduahLsBbMDDs_I0645n01PdaPuAXp28o36DOrX0XeLHT3UYhWnlW5GCUaDDaATwahQ5U-GKSgKmgwlfiztgSItQNJbmxthjKrUX9zzO50VSPFyVSHkmoqIUn72EaqSy872iS0Tk3Wh57NLrK6NYOjqYlDNPSebQPrLzWCpNTY-OAAQKw6j4dk4brP7w_N4eubUtAwu7X0wkEmL9owsHNVfkTWNEg3vyqyHsqjEkV5bxHNncdtEWDQQ2R4ZTpCxfnJ4qZb6Ey1elbB8nmb3xHkWmEzoS3SXc6gdJD44E1H_q3z5N4IL9qeP_XyukmWSjYdNfLd4aOYpH7YuIs-OWRV_9Ky2qF5N-zAi6x9fRXuZiMLMuSoqJG25IsL5I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
